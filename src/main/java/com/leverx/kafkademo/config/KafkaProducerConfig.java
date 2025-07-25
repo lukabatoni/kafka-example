@@ -6,6 +6,8 @@ import java.util.Map;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.kafka.core.DefaultKafkaProducerFactory;
+import org.springframework.kafka.core.ProducerFactory;
 
 @Configuration
 public class KafkaProducerConfig {
@@ -21,5 +23,9 @@ public class KafkaProducerConfig {
     return props;
   }
 
+  public ProducerFactory<String, String> producerFactory(){
+    return new DefaultKafkaProducerFactory<>(producerConfigs());
+
+  }
 
 }
