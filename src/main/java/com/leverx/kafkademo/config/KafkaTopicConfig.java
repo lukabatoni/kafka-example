@@ -10,6 +10,6 @@ public class KafkaTopicConfig {
 
   @Bean
   public NewTopic topic() {
-    return TopicBuilder.name("leverx-kafka-topic").build();
+    return TopicBuilder.name("leverX-kafka-topic").build();
   }
 }
